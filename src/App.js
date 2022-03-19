@@ -1,12 +1,6 @@
 import logo from './logo.svg';
 import React, { Component } from 'react';
 import './App.css';
-/*import "../node_modules/bootstrap/dist/css/bootstrap.css"
-import Home from './component/pages/Home';
-import About from './component/pages/About';
-import Contact from './component/pages/contact';
-import Navbar from './component/layout/Navbar';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";*/
 
 class App extends Component {
   constructor(props) {
@@ -36,8 +30,6 @@ class App extends Component {
         name, address
       }
       datas.push(data);
-
-
     } else {
 
       let index = this.state.index;
@@ -60,7 +52,6 @@ class App extends Component {
     this.setState({
       datas: datas
     });
-
     this.refs.myform.reset();
     this.refs.name.focus();
   }
@@ -74,18 +65,17 @@ class App extends Component {
       act: 1,
       index: i
     });
-
     this.refs.name.focus();
-
   }
+
   render() {
     let datas = this.state.datas;
     return (
       <div className="App">
         <h2>{this.state.title}</h2>
         <form ref="form" className="form">
-          <input type="text" ref="name" placeholder="enter your name" className="formfield" />
-          <input type="text" ref="address" placeholder="enter your address" className="formfield" />
+          <input type="text" ref="name" placeholder="Enter your name" className="formfield" />
+          <input type="text" ref="address" placeholder="Enter your address" className="formfield" />
           <button onClick={(e) => this.fsubmit(e)} className="Button">Submit </button>
         </form>
         <pre>
@@ -97,7 +87,6 @@ class App extends Component {
             </li>
           )}
         </pre>
-
       </div>
     );
   }
